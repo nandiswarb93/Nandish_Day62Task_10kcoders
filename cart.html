@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+   //localStorage.getItem("cart")
+   var cartt = JSON.parse( localStorage.getItem("addtocart"))
+   console.log(cartt)
+
+   var body = document.body;
+   for(let i=0;i<cartt.length;i++)
+        {
+        var div = document.createElement("div")
+        div.style.height="400px";
+        div.style.width="300px";
+        div.style.margin = "5px"
+        div.style.display="inline-block"
+        div.style.borderRadius="10px";
+        div.style.border="1px solid black"
+        div.style.alignContent="center"
+        body.appendChild(div)
+
+        img = document.createElement("img")
+        img.setAttribute("src",cartt[i]["image"])
+        
+        img.style.height = "50%";
+        img.style.width="100%";
+        img.style.borderRadius="10px";
+        div.appendChild(img)
+
+        p = document.createElement("p")
+        p.innerText= cartt[i]["title"]
+        div.appendChild(p)
+        }
+      
+
+    </script>
+</body>
+</html>
