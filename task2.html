@@ -7,6 +7,7 @@
 </head>
 <body>
 <img src="" alt="">
+<p></p>
 
 <script>
 
@@ -14,14 +15,18 @@ console.log(localStorage.getItem("object"))
 
 var  parse_val = JSON.parse(localStorage.getItem("object"))
 
-console.log(parse_val.image)
 
 var  img = document.getElementsByTagName("img")
 console.log(parse_val.image)
 
 img[0].setAttribute("src", parse_val.image)
+img[0].style.width = "100px";
+img[0].style.height = "200px";
 
+var title = document.getElementsByTagName("p")
+title[0].innerText = parse_val.title
 
+console.log(parse_val.title)
 
 
 
